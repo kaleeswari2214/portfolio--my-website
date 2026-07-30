@@ -151,7 +151,7 @@ export default function About() {
                     <h4 className={styles.internRole}>Full Stack Developer Intern</h4>
                     <p className={styles.internCompany}>Top Class Entertainment LLP.</p>
                   </div>
-                  <span className={styles.yearBadge}><FiCalendar size={11} /> Mar – Sep 2024</span>
+                  <span className={styles.yearBadge}><FiCalendar size={11} /> Mar – Sep 2025</span>
                 </div>
                 <ul className={styles.internList}>
                   <li>Built RESTful APIs using Node.js & Express.js</li>
