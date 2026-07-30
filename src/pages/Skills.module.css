@@ -1,0 +1,97 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: default;
+}
+
+.iconWrap {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.icon {
+  font-size: 1.7rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.iconGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  opacity: 0.6;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.category {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #a78bfa;
+  background: rgba(167,139,250,0.1);
+  border: 1px solid rgba(167,139,250,0.2);
+  padding: 0.1rem 0.55rem;
+  border-radius: 50px;
+}
+
+.levelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.barBg {
+  flex: 1;
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.percent {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #a78bfa;
+  min-width: 34px;
+  text-align: right;
+}
