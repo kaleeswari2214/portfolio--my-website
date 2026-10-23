@@ -34,6 +34,32 @@ const EDUCATION = [
   },
 ];
 
+const INTERNSHIPS = [
+  {
+    role: 'Front End Developer Intern',
+    company: 'Xortican Techlogic',
+    duration: 'Aug 19, 2026 – Present',
+    isCurrent: true,
+    points: [
+      'Developing responsive, interactive web interfaces using HTML, JavaScript, and React.',
+      'Building reusable component architectures and modern frontend features.',
+      'Translating design concepts into clean, high-performance web user interfaces.',
+    ],
+  },
+  {
+    role: 'Full Stack Developer Intern',
+    company: 'Top Class Entertainment LLP.',
+    duration: 'Mar – Sep 2025',
+    isCurrent: false,
+    points: [
+      'Built RESTful APIs using Node.js & Express.js',
+      'Developed responsive React dashboards',
+      'Managed MySQL databases and wrote optimized queries',
+      'Collaborated with team using Git & GitHub workflows',
+    ],
+  },
+];
+
 export default function About() {
   return (
     <PageWrapper>
@@ -143,22 +169,35 @@ export default function About() {
             <motion.div className={`glass-card ${styles.card}`} {...fadeUp(0.2)}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardIcon}><FiBriefcase /></span>
-                <h3 className={styles.cardTitle}>Internship</h3>
+                <h3 className={styles.cardTitle}>Internships</h3>
               </div>
-              <div className={styles.internshipCard}>
-                <div className={styles.internshipTop}>
-                  <div>
-                    <h4 className={styles.internRole}>Full Stack Developer Intern</h4>
-                    <p className={styles.internCompany}>Top Class Entertainment LLP.</p>
+              <div className={styles.internshipList}>
+                {INTERNSHIPS.map((intern, i) => (
+                  <div key={i} className={styles.internshipItem}>
+                    <div className={styles.internshipTop}>
+                      <div>
+                        <h4 className={styles.internRole}>{intern.role}</h4>
+                        <p className={styles.internCompany}>{intern.company}</p>
+                      </div>
+                      <span className={intern.isCurrent ? styles.currentBadge : styles.yearBadge}>
+                        {intern.isCurrent ? (
+                          <>
+                            <span className={styles.pulseDot} /> {intern.duration}
+                          </>
+                        ) : (
+                          <>
+                            <FiCalendar size={11} /> {intern.duration}
+                          </>
+                        )}
+                      </span>
+                    </div>
+                    <ul className={styles.internList}>
+                      {intern.points.map((point, idx) => (
+                        <li key={idx}>{point}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <span className={styles.yearBadge}><FiCalendar size={11} /> Mar – Sep 2025</span>
-                </div>
-                <ul className={styles.internList}>
-                  <li>Built RESTful APIs using Node.js & Express.js</li>
-                  <li>Developed responsive React dashboards</li>
-                  <li>Managed MySQL databases and wrote optimized queries</li>
-                  <li>Collaborated with team using Git & GitHub workflows</li>
-                </ul>
+                ))}
               </div>
             </motion.div>
 

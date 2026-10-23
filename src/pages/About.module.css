@@ -235,6 +235,23 @@
 }
 
 /* Internship */
+.internshipList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.internshipItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.internshipItem:not(:first-child) {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(167, 139, 250, 0.15);
+}
+
 .internshipCard { display: flex; flex-direction: column; gap: 1rem; }
 
 .internshipTop {
@@ -253,8 +270,44 @@
 
 .internCompany {
   font-size: 0.82rem;
-  color: #64748b;
+  color: #a78bfa;
+  font-weight: 500;
   margin-top: 0.15rem;
+}
+
+.currentBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  padding: 0.15rem 0.6rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  display: inline-block;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
 }
 
 .internList {
